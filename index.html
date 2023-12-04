@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Digital Clock</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: antiquewhite;
+            
+        }
+        #clock{
+            height: 45px;
+            width: 150px;
+            border-radius: 30px;
+            background-color: aquamarine;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        .centre{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #banner{
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="centre">
+        <div id="banner"><span>your local time</span></div>
+        <div id="clock"></div>
+    </div>
+    
+</body>
+    <script>
+        const clock = document.querySelector('#clock')
+
+        setInterval(function(){
+        let date = new Date();
+        // console.log(date.toLocaleTimeString());
+        clock.innerHTML = date.toLocaleTimeString()
+        },1000);
+    </script>
+</html>
